@@ -1,0 +1,37 @@
+package assignment;
+
+import java.util.Scanner;
+
+public class max_pallidrome_string {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name = new String();
+		String sub = new String();
+		Scanner s = new Scanner(System.in);
+		name = s.nextLine();
+		
+		int len = name.length();
+		
+		for(int i = 0;i<len; i++) {
+			for(int j = 0;j<len;j++) {
+				if(i!=j && name.charAt(i) == name.charAt(j)) {
+					sub = name.substring(i, j);
+					ispalidrome(sub);
+				}
+			}
+		}
+		
+	}
+
+	private static void ispalidrome(String sub) {
+		// TODO Auto-generated method stub
+		String reverse = new String();
+		for (int sublen = (sub.length()-1) ; sublen>=0; sublen--) {
+			System.out.println(sub.charAt(sublen));
+			reverse = reverse + sub.charAt(sublen);
+		}
+		
+	}
+
+}
